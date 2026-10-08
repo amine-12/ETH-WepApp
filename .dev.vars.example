@@ -1,0 +1,2 @@
+# Copier en .dev.vars pour les essais locaux ; ne jamais publier ce secret.
+ANALYTICS_ADMIN_TOKEN=admin

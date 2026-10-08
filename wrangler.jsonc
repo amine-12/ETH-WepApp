@@ -1,0 +1,11 @@
+{
+  "name": "ia-ethique",
+  "compatibility_date": "2026-10-07",
+  "pages_build_output_dir": "./dist",
+  "d1_databases": [{
+    "binding": "ANALYTICS_DB",
+    "database_name": "ia-ethique-analytics",
+    "database_id": "2c99889f-d174-416b-bb3f-06a3d989072d",
+    "migrations_dir": "migrations"
+  }]
+}

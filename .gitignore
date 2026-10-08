@@ -1,0 +1,15 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
+playwright-report/
+test-results/
+.sites-runtime/
+
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
+.wrangler/
+.cloudflare/
