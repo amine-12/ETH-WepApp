@@ -140,8 +140,15 @@ test('clavier, texte agrandi et captures de contrôle', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 1000 });
   for (const route of ['/', '/modules', '/progression', '/quiz', '/ressources', '/modules/environnement']) {
     await page.goto(route);
-    await page.evaluate(() => document.documentElement.style.fontSize = '32px');
-    expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+    await expect(page.locator('h1')).toBeVisible();
+    // Linux utilise Arial en remplacement de Segoe UI : vérifier les deux rendus.
+    for (const fontFamily of ['Inter, "Segoe UI", Arial, sans-serif', 'Arial, sans-serif']) {
+      await page.evaluate(font => {
+        document.documentElement.style.fontSize = '32px';
+        document.documentElement.style.fontFamily = font;
+      }, fontFamily);
+      expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth), `${route} avec ${fontFamily} à 200 %`).toBe(true);
+    }
   }
 });
 
