@@ -1,0 +1,1559 @@
+# Mission
+
+Crée un site web éducatif moderne et interactif sur les enjeux éthiques liés à l'intelligence artificielle.
+
+Le site est réalisé dans le cadre du cours universitaire ETH610.
+
+L'objectif n'est pas simplement de présenter du texte. Le site doit permettre à un utilisateur :
+
+- d'apprendre les principaux enjeux éthiques de l'IA;
+- de naviguer facilement entre plusieurs modules;
+- de progresser à travers les contenus;
+- de répondre à des questions;
+- de participer à des mini-jeux;
+- d'obtenir immédiatement une rétroaction pédagogique;
+- de voir sa progression.
+
+Pour cette première version, crée uniquement le frontend.
+
+Ne configure pas encore Supabase, de base de données ou de système d'authentification.
+
+Cependant, structure le code pour permettre d'ajouter plus tard :
+
+- une base Supabase;
+- le stockage des réponses;
+- des statistiques d'utilisation;
+- des sessions anonymes;
+- un tableau de bord administrateur.
+
+---
+
+# 1. Technologies
+
+Utiliser :
+
+- React
+- TypeScript
+- Vite
+- React Router
+- CSS moderne ou Tailwind CSS
+- Lucide React pour les icônes
+
+Pour les animations, utiliser des animations CSS légères ou Framer Motion si cela apporte une vraie amélioration.
+
+Éviter les dépendances inutiles.
+
+Le projet doit fonctionner avec :
+
+```bash
+npm install
+npm run dev
+```
+
+et être compilable avec :
+
+```bash
+npm run build
+```
+
+---
+
+# 2. Style général
+
+Le site doit avoir l'apparence d'une véritable plateforme éducative moderne.
+
+Je ne veux pas un site qui ressemble simplement à plusieurs documents Word collés les uns sous les autres.
+
+## Direction visuelle
+
+Utiliser :
+
+- beaucoup d'espace;
+- cartes;
+- sections distinctes;
+- icônes;
+- petites illustrations abstraites;
+- visualisations;
+- animations discrètes;
+- indicateurs de progression;
+- encadrés pour les exemples;
+- encadrés pour les concepts éthiques;
+- composants interactifs.
+
+Le design doit rester :
+
+- professionnel;
+- universitaire;
+- moderne;
+- sobre;
+- accessible;
+- facile à lire.
+
+Éviter :
+
+- couleurs trop flashy;
+- emojis;
+- surcharge visuelle;
+- grandes quantités de texte sans mise en forme;
+- animations inutiles.
+
+---
+
+# 3. Structure générale
+
+Créer les routes suivantes :
+
+```text
+/
+ /modules
+ /modules/comprendre-ia
+ /modules/bien-utiliser-ia
+ /modules/hallucinations
+ /modules/environnement
+ /modules/vie-privee
+ /modules/responsabilite
+ /quiz
+ /progression
+```
+
+L'architecture doit permettre d'ajouter facilement de nouveaux modules.
+
+---
+
+# 4. Header
+
+Créer un header fixe ou légèrement sticky.
+
+À gauche :
+
+```text
+IA & Éthique
+ETH610
+```
+
+Navigation :
+
+- Accueil
+- Modules
+- Quiz
+- Ma progression
+
+À droite :
+
+- indicateur de progression;
+- bouton permettant de reprendre le dernier module commencé.
+
+Sur mobile, utiliser un menu hamburger accessible.
+
+---
+
+# 5. Page d'accueil
+
+Créer une page d'accueil attractive.
+
+## Hero
+
+Titre principal :
+
+```text
+Comprendre l'IA.
+Réfléchir à ses impacts.
+L'utiliser de façon responsable.
+```
+
+Sous-titre :
+
+```text
+Explore les principaux enjeux éthiques de l'intelligence artificielle à travers des modules interactifs, des exemples et des mises en situation.
+```
+
+Bouton principal :
+
+```text
+Commencer
+```
+
+Bouton secondaire :
+
+```text
+Voir les modules
+```
+
+Ajouter une illustration abstraite liée à :
+
+- intelligence artificielle;
+- humain;
+- données;
+- décisions;
+- responsabilité.
+
+Ne pas utiliser une image générique de robot humanoïde.
+
+---
+
+# 6. Section « Ce que vous allez découvrir »
+
+Afficher plusieurs cartes représentant les grands thèmes :
+
+### Comprendre l'IA
+
+Comment fonctionne une IA générative et quelles sont ses limites.
+
+### Bien utiliser l'IA
+
+Apprendre à poser de bonnes questions et utiliser l'IA comme outil d'aide.
+
+### Hallucinations et biais
+
+Comprendre pourquoi une IA peut inventer des informations ou reproduire des préjugés.
+
+### Vie privée
+
+Comprendre comment les données peuvent être collectées, utilisées et déduites.
+
+### Impact environnemental
+
+Découvrir l'énergie, l'eau et le matériel nécessaires au fonctionnement de l'IA.
+
+### Responsabilité
+
+Réfléchir à la propriété intellectuelle, l'anthropomorphisme et aux décisions automatisées.
+
+Chaque carte :
+
+- possède une icône;
+- possède une courte description;
+- indique une durée approximative;
+- affiche la progression;
+- possède un bouton « Commencer » ou « Continuer ».
+
+---
+
+# 7. Système de modules
+
+Créer un composant générique :
+
+```text
+ModuleLayout
+```
+
+Chaque module doit utiliser la même structure générale.
+
+## En haut
+
+Afficher :
+
+```text
+Module X
+Titre
+Description
+Temps estimé
+Progression
+```
+
+Ajouter une barre de progression horizontale.
+
+---
+
+# 8. Navigation interne des modules
+
+Chaque module est découpé en plusieurs petites sections.
+
+Ne pas afficher tout le texte sur une seule page interminable.
+
+Exemple :
+
+```text
+Introduction
+    ↓
+Concept 1
+    ↓
+Exemple
+    ↓
+Concept 2
+    ↓
+Question interactive
+    ↓
+Concept 3
+    ↓
+Mini-jeu
+    ↓
+À retenir
+```
+
+Créer des boutons :
+
+```text
+Précédent
+Continuer
+```
+
+La progression doit être enregistrée temporairement dans `localStorage`.
+
+---
+
+# 9. Module — Comprendre l'IA
+
+Objectif :
+
+Comprendre ce qu'est une IA générative, son fonctionnement général et ses limites.
+
+Présenter de manière simple :
+
+- données d'entrée;
+- apprentissage;
+- modèles;
+- génération d'une réponse;
+- prédictions statistiques.
+
+Créer une visualisation simple :
+
+```text
+Données
+   ↓
+Entraînement
+   ↓
+Modèle
+   ↓
+Question
+   ↓
+Prédiction
+   ↓
+Réponse
+```
+
+Chaque étape doit être cliquable ou survolable pour afficher une courte explication.
+
+Insister sur l'idée suivante :
+
+Une IA générative ne « sait » pas nécessairement qu'une affirmation est vraie. Elle produit une réponse à partir de modèles statistiques appris.
+
+---
+
+# 10. Module — Bien utiliser l'IA
+
+Objectif :
+
+Apprendre à utiliser l'IA comme outil d'aide plutôt que comme remplacement du jugement humain.
+
+Présenter l'importance :
+
+- d'une demande claire;
+- du contexte;
+- des contraintes;
+- de la vérification;
+- du jugement humain;
+- de ne pas partager inutilement des informations sensibles.
+
+Créer une activité interactive :
+
+## Mauvais prompt / meilleur prompt
+
+Afficher :
+
+```text
+Explique-moi ça.
+```
+
+Puis permettre à l'utilisateur d'améliorer le prompt avec :
+
+- objectif;
+- contexte;
+- niveau;
+- format attendu;
+- contraintes.
+
+Montrer progressivement comment la demande devient meilleure.
+
+---
+
+# 11. Module — Hallucinations, désinformation et biais
+
+Titre :
+
+```text
+Hallucinations, mensonges et préjugés
+```
+
+Présenter l'idée qu'une réponse convaincante n'est pas forcément vraie.
+
+## Section Hallucinations
+
+Expliquer :
+
+Une hallucination se produit lorsqu'une IA produit une information fausse et la présente comme vraie.
+
+Exemples :
+
+- fausse étude;
+- mauvaise date;
+- citation inventée;
+- chercheur inexistant;
+- référence inexistante.
+
+Créer une carte :
+
+```text
+Détaillé ≠ vrai
+Confiant ≠ correct
+```
+
+---
+
+# 12. Pourquoi les hallucinations existent
+
+Créer une visualisation :
+
+```text
+Question
+   ↓
+Prédiction du prochain mot
+   ↓
+Prédiction suivante
+   ↓
+...
+   ↓
+Réponse complète
+```
+
+Message important :
+
+```text
+Une réponse statistiquement probable n'est pas nécessairement vraie.
+```
+
+---
+
+# 13. Désinformation
+
+Expliquer la différence entre :
+
+### Hallucination
+
+Information incorrecte produite par le système sans nécessairement chercher à tromper.
+
+### Désinformation
+
+Information fausse diffusée intentionnellement afin de tromper.
+
+Présenter les risques liés aux :
+
+- textes générés;
+- images générées;
+- voix synthétiques;
+- deepfakes;
+- vidéos artificielles.
+
+---
+
+# 14. Mini-jeu — Trouvez l'hallucination
+
+Utiliser le mini-jeu prévu dans le contenu pédagogique.
+
+Afficher plusieurs paragraphes du module.
+
+Une affirmation volontairement fausse doit être présente :
+
+```text
+En 2024, l'UNESCO a lancé un système appelé
+« Global AI Truth Index » permettant de noter la fiabilité
+des contenus générés par IA de 0 à 100.
+```
+
+Demander :
+
+```text
+Une hallucination se cache dans ce contenu.
+Pouvez-vous la trouver ?
+```
+
+L'utilisateur clique sur la phrase qu'il pense être fausse.
+
+Si mauvais choix :
+
+```text
+Cette information n'est pas l'hallucination recherchée.
+Regardez les détails qui semblent particulièrement précis.
+```
+
+Prévoir un bouton :
+
+```text
+Afficher un indice
+```
+
+Indice :
+
+```text
+Cherchez dans la partie sur la désinformation.
+```
+
+Lorsque l'utilisateur trouve la réponse :
+
+afficher une animation légère et expliquer pourquoi l'affirmation semblait crédible.
+
+Message final :
+
+```text
+Une organisation connue, une date précise et un nom crédible
+ne garantissent pas qu'une information soit vraie.
+```
+
+---
+
+# 15. Biais de l'intelligence artificielle
+
+Expliquer que les données humaines peuvent contenir :
+
+- stéréotypes;
+- inégalités;
+- déséquilibres;
+- sous-représentations.
+
+Créer une visualisation :
+
+```text
+Données historiques biaisées
+          ↓
+      Entraînement
+          ↓
+       Modèle IA
+          ↓
+Décisions pouvant reproduire les biais
+```
+
+---
+
+# 16. Exemple recrutement
+
+Créer une mise en situation.
+
+```text
+Une entreprise entraîne une IA avec les CV
+des employés recrutés pendant les quinze dernières années.
+```
+
+Demander :
+
+```text
+Quel problème pourrait apparaître ?
+```
+
+Proposer plusieurs choix.
+
+Après la réponse, expliquer comment le système peut reproduire les tendances historiques.
+
+---
+
+# 17. Biais et discrimination
+
+Expliquer que le biais devient particulièrement problématique lorsqu'il affecte :
+
+- recrutement;
+- assurance;
+- crédit;
+- services financiers;
+- accès à certains services.
+
+Créer un encadré :
+
+```text
+95 % de précision globale ne signifie pas nécessairement
+95 % de précision pour chaque groupe.
+```
+
+---
+
+# 18. Module — Vie privée
+
+Créer un module consacré à la collecte et à l'utilisation des données.
+
+Introduire l'idée suivante :
+
+Les systèmes d'IA dépendent fortement des données et les utilisateurs ne réalisent pas toujours la quantité d'informations qu'ils transmettent.
+
+Présenter les étapes :
+
+```text
+1. Entrée
+2. Traitement
+3. Résultat
+4. Ajustement
+5. Évaluation
+```
+
+Créer une visualisation interactive circulaire ou horizontale.
+
+---
+
+# 19. Données personnelles et inférences
+
+Expliquer qu'un utilisateur peut révéler directement :
+
+- texte;
+- images;
+- documents;
+- audio;
+- données personnelles.
+
+Mais qu'un système peut également déduire certaines informations à partir de comportements et de données combinées.
+
+Créer une activité :
+
+```text
+Est-ce une information que vous devriez partager avec une IA ?
+```
+
+Exemples :
+
+```text
+Mon numéro de carte bancaire
+Mon mot de passe
+Un texte public
+Mon dossier médical complet
+Un document contenant des informations confidentielles
+Une question générale
+```
+
+L'utilisateur classe les éléments :
+
+```text
+À éviter
+Généralement acceptable
+```
+
+Ajouter une explication après chaque choix.
+
+---
+
+# 20. Bonnes pratiques de confidentialité
+
+Présenter sous forme de checklist :
+
+- ne pas transmettre de mots de passe;
+- ne pas transmettre d'informations financières;
+- éviter les dossiers médicaux identifiables;
+- retirer les données permettant d'identifier une personne;
+- vérifier les paramètres de confidentialité;
+- vérifier comment les données sont utilisées;
+- lire les politiques de confidentialité lorsque nécessaire.
+
+Créer un encadré :
+
+```text
+Considérez toujours ce que vous écrivez à une IA
+comme une information susceptible d'être conservée.
+```
+
+---
+
+# 21. Module — Impact environnemental
+
+Titre :
+
+```text
+L'impact environnemental de l'IA
+```
+
+Introduction :
+
+L'intelligence artificielle semble fonctionner uniquement dans le cloud, mais elle repose sur une infrastructure physique importante.
+
+Présenter trois impacts principaux.
+
+---
+
+# 22. Énergie et carbone
+
+Expliquer :
+
+- entraînement;
+- inférence;
+- processeurs;
+- consommation électrique;
+- mix énergétique.
+
+Créer une comparaison visuelle :
+
+```text
+Centre de données A
+Énergie fossile
+→ empreinte carbone élevée
+
+Centre de données B
+Hydroélectricité
+→ empreinte carbone réduite
+```
+
+---
+
+# 23. Consommation d'eau
+
+Expliquer que les centres de données produisent de la chaleur et nécessitent des systèmes de refroidissement.
+
+Présenter :
+
+```text
+Serveurs
+   ↓
+Chaleur
+   ↓
+Refroidissement
+   ↓
+Consommation de ressources
+```
+
+Introduire la notion de justice environnementale :
+
+L'utilisation d'importantes quantités d'eau peut être particulièrement problématique dans les régions touchées par la sécheresse.
+
+---
+
+# 24. Déchets électroniques
+
+Présenter :
+
+- cartes graphiques;
+- serveurs;
+- renouvellement du matériel;
+- extraction des métaux;
+- déchets électroniques.
+
+Créer une timeline :
+
+```text
+Extraction
+→ Fabrication
+→ Utilisation
+→ Remplacement
+→ Déchet électronique
+```
+
+---
+
+# 25. Sobriété numérique
+
+Présenter la différence entre :
+
+```text
+Modèle massif
+VS
+Modèle spécialisé
+```
+
+Expliquer le principe :
+
+```text
+Utiliser l'outil le plus léger permettant d'accomplir correctement la tâche.
+```
+
+Introduire :
+
+- éco-conception;
+- proportionnalité;
+- modèle spécialisé;
+- durée de vie du matériel;
+- mutualisation des ressources.
+
+---
+
+# 26. Mini-jeu environnement — Conception d'une IA
+
+Créer un vrai mini-jeu interactif.
+
+Titre :
+
+```text
+Concevez une IA performante et responsable
+```
+
+Scénario :
+
+```text
+Vous devez développer un système d'IA permettant
+d'optimiser la distribution d'énergie d'un réseau électrique régional.
+```
+
+Objectifs :
+
+```text
+Performance minimale : 70 %
+Budget écologique initial : 100 %
+```
+
+Afficher constamment :
+
+```text
+Performance : 0 %
+Budget écologique : 100 %
+```
+
+Utiliser deux jauges animées.
+
+---
+
+# 27. Étape 1 du jeu — Architecture
+
+Question :
+
+```text
+Quelle architecture choisissez-vous ?
+```
+
+### Option A
+
+```text
+Modèle de fondation massif
+
+Performance : +55 %
+Budget écologique : -40 %
+```
+
+Tooltip :
+
+```text
+Très forte puissance de calcul.
+Empreinte énergétique importante.
+```
+
+### Option B
+
+```text
+Modèle dédié et frugal
+
+Performance : +35 %
+Budget écologique : -15 %
+```
+
+Tooltip :
+
+```text
+Modèle spécialisé et moins coûteux en ressources.
+```
+
+---
+
+# 28. Étape 2 — Centre de données
+
+### Option A
+
+```text
+Région chaude + énergie fossile
+
+Performance : +25 %
+Budget écologique : -35 %
+```
+
+### Option B
+
+```text
+Région nordique + hydroélectricité
+
+Performance : +20 %
+Budget écologique : -15 %
+```
+
+Expliquer les conséquences sur :
+
+- carbone;
+- refroidissement;
+- eau.
+
+---
+
+# 29. Étape 3 — Matériel
+
+### Option A
+
+```text
+Nouveaux accélérateurs IA
+
+Performance : +25 %
+Budget écologique : -35 %
+```
+
+### Option B
+
+```text
+Serveurs mutualisés et reconditionnés
+
+Performance : +15 %
+Budget écologique : -10 %
+```
+
+---
+
+# 30. Résultat du jeu environnemental
+
+Calculer :
+
+```text
+performanceFinale
+budgetEcologiqueFinal
+```
+
+## Succès
+
+Si :
+
+```text
+performance >= 70
+ET
+budget > 0
+```
+
+Afficher :
+
+```text
+Mission accomplie
+```
+
+Expliquer le principe de sobriété numérique.
+
+## Échec écologique
+
+Si :
+
+```text
+budget <= 0
+```
+
+Afficher :
+
+```text
+Dépassement des limites de ressources
+```
+
+## Échec fonctionnel
+
+Si :
+
+```text
+performance < 70
+```
+
+Afficher :
+
+```text
+Le système n'atteint pas le niveau de performance nécessaire.
+```
+
+Insister sur le fait qu'un système inutilisable gaspille lui aussi des ressources.
+
+---
+
+# 31. Module — Responsabilité et utilisation éthique
+
+Diviser ce module en trois grands thèmes :
+
+```text
+Propriété intellectuelle
+Anthropomorphisme
+Explicabilité et traçabilité
+```
+
+Utiliser une navigation par onglets ou chapitres.
+
+---
+
+# 32. Propriété intellectuelle
+
+Présenter la question :
+
+```text
+Peut-on utiliser le travail d'autrui pour entraîner une IA
+sans son consentement, reconnaissance ou rémunération ?
+```
+
+Aborder :
+
+- données d'entraînement;
+- œuvres protégées;
+- droit d'auteur;
+- consentement;
+- rémunération;
+- justice;
+- utilisation commerciale.
+
+Présenter les exemples du contenu fourni sous forme de cartes ou timeline.
+
+Ne pas présenter les controverses juridiques comme entièrement tranchées.
+
+Bien distinguer :
+
+```text
+Légalité
+VS
+Acceptabilité éthique
+```
+
+---
+
+# 33. Anthropomorphisme
+
+Définition :
+
+Attribuer des caractéristiques humaines à quelque chose qui ne l'est pas.
+
+Présenter les risques :
+
+- croire que l'IA comprend réellement;
+- lui attribuer des émotions;
+- dépendance;
+- confiance excessive;
+- réduction du jugement critique;
+- confusion entre imitation et relation réelle.
+
+Créer une petite activité.
+
+Afficher différentes phrases :
+
+```text
+Je suis triste pour toi.
+Je comprends exactement ce que tu ressens.
+Je suis toujours là pour toi.
+```
+
+Demander :
+
+```text
+Que peut-on réellement conclure de ces phrases ?
+```
+
+Bonne idée pédagogique :
+
+```text
+L'IA peut produire le langage d'une émotion sans nécessairement ressentir cette émotion.
+```
+
+---
+
+# 34. Explicabilité et traçabilité
+
+Définir :
+
+### Explicabilité
+
+Comprendre les facteurs ayant conduit à une décision ou une recommandation.
+
+### Traçabilité
+
+Pouvoir conserver et retrouver :
+
+- données utilisées;
+- résultat;
+- outil utilisé;
+- interventions humaines;
+- étapes importantes du processus.
+
+Créer une visualisation :
+
+```text
+Entrées
+   ↓
+Système IA
+   ↓
+Décision
+   ↓
+Explication
+   ↓
+Possibilité de contestation
+```
+
+Créer un encadré :
+
+```text
+Une explication convaincante produite par l'IA
+n'est pas forcément une description fidèle
+du processus qui a réellement produit sa réponse.
+```
+
+---
+
+# 35. Questions interactives
+
+Chaque module doit avoir quelques interactions courtes.
+
+Créer un composant générique :
+
+```text
+QuestionCard
+```
+
+Supporter :
+
+```typescript
+type QuestionType =
+  | "multiple-choice"
+  | "true-false"
+  | "scenario";
+```
+
+Exemple de structure :
+
+```typescript
+interface Question {
+  id: string;
+  moduleId: string;
+  question: string;
+  type: QuestionType;
+  options: {
+    id: string;
+    label: string;
+  }[];
+  correctAnswer: string;
+  explanation: string;
+}
+```
+
+Pour l'instant, les données peuvent être stockées dans des fichiers TypeScript ou JSON.
+
+---
+
+# 36. Feedback pédagogique
+
+Après chaque réponse :
+
+Si correcte :
+
+```text
+Bonne réponse
+```
+
+Puis donner une explication.
+
+Si incorrecte :
+
+```text
+Pas tout à fait.
+```
+
+Puis expliquer pourquoi.
+
+Ne jamais afficher uniquement :
+
+```text
+Correct
+Incorrect
+```
+
+Chaque question doit enseigner quelque chose.
+
+---
+
+# 37. Page « Modules »
+
+Créer une grille présentant tous les modules.
+
+Chaque carte affiche :
+
+```text
+Module X
+Titre
+Description
+Temps estimé
+Progression
+Statut
+```
+
+Statuts :
+
+```text
+À commencer
+En cours
+Terminé
+```
+
+---
+
+# 38. Progression
+
+Pour cette première version, stocker la progression dans :
+
+```text
+localStorage
+```
+
+Conserver :
+
+```typescript
+{
+  completedModules: [],
+  moduleProgress: {},
+  answers: {},
+  lastModule: ""
+}
+```
+
+Créer un `ProgressContext` ou équivalent.
+
+L'architecture doit permettre de remplacer facilement `localStorage` par Supabase plus tard.
+
+Ne jamais appeler `localStorage` directement depuis tous les composants.
+
+Créer une abstraction :
+
+```typescript
+progressService
+```
+
+---
+
+# 39. Page « Ma progression »
+
+Afficher :
+
+```text
+Modules terminés
+X / total
+```
+
+Ajouter :
+
+- progression générale;
+- modules commencés;
+- modules terminés;
+- score des quiz;
+- bouton permettant de continuer.
+
+Créer un cercle ou une barre de progression globale.
+
+---
+
+# 40. Fin d'un module
+
+À la fin de chaque module, afficher une page :
+
+```text
+Ce qu'il faut retenir
+```
+
+Présenter 3 à 5 idées principales.
+
+Puis :
+
+```text
+Tester mes connaissances
+```
+
+et :
+
+```text
+Module suivant
+```
+
+---
+
+# 41. Quiz final
+
+Créer une page :
+
+```text
+/quiz
+```
+
+Le quiz final doit sélectionner des questions provenant de plusieurs modules.
+
+Afficher une question à la fois.
+
+À la fin :
+
+```text
+Votre résultat
+8 / 10
+```
+
+Puis fournir un résumé :
+
+```text
+Points bien compris
+Points à revoir
+Modules recommandés
+```
+
+Permettre :
+
+```text
+Recommencer
+```
+
+---
+
+# 42. Accessibilité
+
+Respecter :
+
+- contraste suffisant;
+- navigation clavier;
+- focus visible;
+- boutons accessibles;
+- labels;
+- `aria-label` lorsque nécessaire;
+- taille de texte confortable;
+- responsive design.
+
+Les interactions ne doivent pas dépendre uniquement du survol.
+
+---
+
+# 43. Responsive design
+
+Le site doit fonctionner correctement sur :
+
+- desktop;
+- laptop;
+- tablette;
+- téléphone.
+
+Sur téléphone :
+
+- navigation compacte;
+- cartes verticales;
+- mini-jeux adaptés;
+- aucun débordement horizontal.
+
+---
+
+# 44. Architecture du code
+
+Créer quelque chose de similaire à :
+
+```text
+src/
+├── components/
+│   ├── layout/
+│   │   ├── Header.tsx
+│   │   ├── Footer.tsx
+│   │   └── ModuleLayout.tsx
+│   │
+│   ├── modules/
+│   │   ├── ModuleHeader.tsx
+│   │   ├── ModuleSection.tsx
+│   │   ├── KeyConcept.tsx
+│   │   ├── ExampleCard.tsx
+│   │   └── ModuleSummary.tsx
+│   │
+│   ├── quiz/
+│   │   ├── QuestionCard.tsx
+│   │   ├── QuizFeedback.tsx
+│   │   └── QuizResult.tsx
+│   │
+│   ├── games/
+│   │   ├── HallucinationGame.tsx
+│   │   └── EcoAiGame.tsx
+│   │
+│   └── common/
+│
+├── pages/
+│   ├── HomePage.tsx
+│   ├── ModulesPage.tsx
+│   ├── ModulePage.tsx
+│   ├── QuizPage.tsx
+│   └── ProgressPage.tsx
+│
+├── data/
+│   ├── modules.ts
+│   ├── questions.ts
+│   └── games.ts
+│
+├── services/
+│   └── progressService.ts
+│
+├── context/
+│   └── ProgressContext.tsx
+│
+├── types/
+│   ├── module.ts
+│   ├── question.ts
+│   └── progress.ts
+│
+├── App.tsx
+└── main.tsx
+```
+
+Adapter cette architecture si une meilleure organisation apparaît pendant l'implémentation.
+
+---
+
+# 45. Modèle de données des modules
+
+Éviter de coder tout le contenu directement dans les composants.
+
+Créer une structure de données permettant de définir un module.
+
+Par exemple :
+
+```typescript
+interface LearningModule {
+  id: string;
+  number: number;
+  title: string;
+  description: string;
+  estimatedMinutes: number;
+  icon: string;
+  sections: ModuleSection[];
+}
+```
+
+Cela permettra d'ajouter ou modifier les modules sans reconstruire toute l'application.
+
+---
+
+# 46. Préparer l'intégration future avec Supabase
+
+Même si Supabase ne doit PAS être ajouté maintenant, préparer le frontend.
+
+Les actions suivantes doivent passer par des services :
+
+```text
+saveAnswer()
+saveProgress()
+completeModule()
+trackModuleOpen()
+trackGameResult()
+```
+
+Pour l'instant, ces fonctions utilisent uniquement `localStorage`.
+
+Plus tard, elles seront remplacées par des appels à Supabase.
+
+Ne pas coupler les composants à `localStorage`.
+
+---
+
+# 47. Contenu
+
+Utiliser le contenu pédagogique fourni comme source principale.
+
+Préserver :
+
+- les idées;
+- les exemples;
+- les distinctions éthiques;
+- les mises en situation;
+- les mini-jeux.
+
+Tu peux :
+
+- corriger de petites fautes grammaticales;
+- raccourcir certains paragraphes pour l'interface;
+- les découper en cartes;
+- transformer le contenu en interactions;
+- améliorer sa présentation.
+
+Ne pas inventer de nouvelles statistiques ou études.
+
+Ne pas transformer une affirmation nuancée en fait absolu.
+
+---
+
+# 48. Expérience recherchée
+
+Le résultat doit ressembler davantage à :
+
+```text
+Duolingo
++
+cours universitaire interactif
++
+plateforme pédagogique moderne
+```
+
+qu'à :
+
+```text
+PDF affiché dans une page web.
+```
+
+Mais garder un style plus sérieux et professionnel que Duolingo.
+
+---
+
+# 49. Priorité UX
+
+Pour chaque écran, se demander :
+
+```text
+Qu'est-ce que l'utilisateur doit comprendre ici ?
+Quelle est la prochaine action évidente ?
+Peut-on rendre cette information plus visuelle ?
+```
+
+Éviter les écrans où l'utilisateur voit immédiatement plusieurs énormes paragraphes.
+
+Découper l'information progressivement.
+
+---
+
+# 50. Travail demandé
+
+Procède dans cet ordre :
+
+1. Inspecter le dépôt existant s'il contient déjà du code.
+2. Configurer l'architecture React.
+3. Créer le design system.
+4. Créer le layout général.
+5. Créer la page d'accueil.
+6. Créer la page des modules.
+7. Créer le système générique de modules.
+8. Intégrer les contenus pédagogiques.
+9. Créer les questions interactives.
+10. Créer le jeu « Trouvez l'hallucination ».
+11. Créer le jeu environnemental.
+12. Ajouter la progression locale.
+13. Créer le quiz final.
+14. Créer la page de progression.
+15. Tester le responsive.
+16. Tester la navigation.
+17. Vérifier le build.
+
+---
+
+# 51. Critères de réussite
+
+Le travail est terminé lorsque :
+
+- `npm run dev` fonctionne;
+- `npm run build` fonctionne;
+- toutes les routes fonctionnent;
+- tous les modules sont accessibles;
+- la navigation mobile fonctionne;
+- les questions sont interactives;
+- le jeu d'hallucination fonctionne;
+- le jeu environnemental calcule correctement performance et budget;
+- la progression persiste après rafraîchissement;
+- les modules peuvent facilement recevoir de nouvelles sections;
+- l'interface est responsive;
+- aucune erreur importante n'apparaît dans la console;
+- le site ressemble à une plateforme éducative finie.
+
+---
+
+# 52. Important
+
+Ne crée pas encore :
+
+- Supabase;
+- base de données;
+- authentification;
+- dashboard admin;
+- collecte réelle d'analytics;
+- backend Node.js.
+
+Ces éléments seront ajoutés dans une deuxième étape.
+
+Cependant, l'architecture doit être conçue pour qu'on puisse les intégrer sans devoir réécrire toute l'application.
+
+Commence par analyser le projet existant.
+
+Ensuite, implémente directement le site.
+
+À la fin, donne :
+
+1. les fichiers créés;
+2. les fichiers modifiés;
+3. les principales décisions d'architecture;
+4. les commandes pour lancer le site;
+5. les fonctionnalités terminées;
+6. les éventuels éléments restant à faire;
+7. le résultat de `npm run build`.

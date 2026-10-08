@@ -1,0 +1,472 @@
+Hallucination : 
+Hallucinations, mensonges, préjugés 
+
+L’intelligence artificielle est utilisée pour chercher des informations, écrire des textes, créer des images analyser des données et même acheter des produits. Les IA génératives répondent plus vite à des questions complexe que des humains et donnent des réponses qui semblent vraisemblable. Pourtant, une réponse bien formée n’est pas forcément vraie. Une IA peut inventer des choses, répéter des préjugés ou aider à propager de fausses informations. Il est donc important de connaître les limites de l’IA pour s’en servir correctement. 
+
+ 
+
+Les hallucinations 
+
+Une hallucination, c’est quand une IA invente une information fausse et la présente comme vraie. Par exemple, elle pourrait inventer une étude, donner une mauvaise date ou attribuer une citation à la mauvaise personne. 
+
+Cela vient du fonctionnement des modèles de langage. Une IA générative (LLM ou autre) choisit les mots les plus probables pour répondre à une question en se basant sur ce qu’elle a appris. Elle essaie juste de créer la réponse la plus statistiquement probable, mais une réponse probable n’est pas forcément vraie. 
+
+Le problème, c’est que les hallucinations sont parfois difficiles à repérer. Une hallucination avec une date précise, le nom d’un chercheur et des explications semble être plus crédible qu’une réponse vague mais véridique, même si tout est inventé. 
+
+C’est pourquoi il faut vérifier les informations auprès de sources sûres où les chiffres, les dates, les citations et les références doivent être particulièrement vérifiés. Il vaut mieux consulter les sources originales plutôt que de juste demander à l’IA de recouper et de ne pas se tromper. 
+
+ 
+
+Désinformation et contenu créé par IA 
+
+Une hallucination et la désinformation, ce n’est pas tout à fait pareil. Une hallucination est une information nouvelle et sans fondement créée par l’IA. La désinformation, c’est plutôt une information fausse diffusée volontairement pour tromper. 
+
+Cependant, l’intelligence artificielle rend la création de désinformation beaucoup plus facile. On peut maintenant créer rapidement des textes, des images, des voix et des vidéos qui semblent réels. Les « deepfakes » par exemple peuvent faire croire qu’une personne a dit ou fait quelque chose qu’elle n’a jamais fait. 
+
+En 2024, l’UNESCO a lancé un système appelé « Global AI Truth Index » pour noter la fiabilité des contenus créés par IA, de 0 à 100. Certaines plateformes en ligne utilisent cet indice pour mieux repérer les fausses informations. 
+
+Avec ces technologies, voir une image ou entendre une voix ne suffit plus toujours à confirmer qu’un événement est réel. Quand un contenu paraît surprenant, il faut chercher la source originale et voir si d’autres sources fiables disent la même chose. Il faut aussi se méfier des contenus qui visent surtout à provoquer une forte réaction comme la peur ou la colère, car cela pousse à partager l’information et bien souvent sans être vérifier. 
+
+ 
+
+Les biais de l’intelligence artificielle 
+
+Un autre souci, ce sont les biais. Les IA apprennent à partir de grandes quantités de données issues de contenus humains. Ces données peuvent donc contenir les mêmes biais que nous : stéréotypes, inégalités ou surreprésentation de certains groupes. L’IA apprend ces tendances et les répète. 
+
+Prenons l’exemple d’une entreprise qui utilise une IA pour trier les CV. Pour l’entraîner, elle se base sur les CV des personnes embauchées ces quinze dernières années. Si l’entreprise a toujours préféré certains profils, l’IA peut apprendre que les caractéristiques de ces profils correspondent à un « bon candidat ». Le système risque alors de reproduire un schéma historique, même si personne ne lui a demandé de discriminer. 
+
+Un biais peut aussi apparaître quand un groupe est peu représenté dans les données d’apprentissage. Un système peut être très performant en général, mais beaucoup moins précis pour certaines personnes ou situations. 
+
+C’est pourquoi une précision globale de « 95 % de bonnes réponses » ne dit pas toujours tout de la qualité d’une IA. Il faut aussi regarder comment les erreurs sont réparties. 
+
+ 
+
+Quand un biais mène à la discrimination 
+
+Un biais devient vraiment problématique quand il influence une décision concernant une personne. Cela peut arriver partout où des systèmes automatisés sont utilisés : recrutement, assurances, services financiers, etc. 
+
+Par exemple, un système de recrutement biaisé contre un certain groupe pourrait rejeter automatiquement des candidats qualifiés. Même si les développeurs n’ont aucune intention de discriminer, les conséquences pour les groupes concernés peuvent être bien réelles. 
+
+Pour limiter ces problèmes, il faudrait entrainer les IA avec des données variées et continuer à surveiller leurs résultats après leur mise en service. Pour les décisions importantes, il est aussi utile qu’une personne reste responsable des décisions prise par le système et qu’il comprend comment elle fonctionne pour ne pas tomber dans ces pièges. 
+
+ 
+
+Adopter les bonnes habitudes 
+
+Pour une utilisation responsable de l’intelligence artificielle tout en limitant les risques, le mieux est de développer son esprit critique. Il ne faut pas croire automatiquement tout ce que l’on lit parce qu’elle est détaillée ou qu’elle est formulée avec assurance. 
+
+Quelques questions simples peuvent aider. D’où vient cette information ? La source existe-t-elle vraiment ? D’autres sources fiables donnent-elles la même information ? Peut-on vérifier le chiffre ou la citation ? 
+
+Le niveau de vérification doit aussi dépendre de l’importance de l’information. Une erreur dans une suggestion de film n’aura pas de grosses conséquences. Une erreur concernant la santé, les finances ou le droit peut être bien plus grave. 
+
+L’intelligence artificielle reste un outil très utile pour chercher, expliquer et organiser l’information, mais elle ne remplace pas le jugement de l’utilisateur. Comprendre les hallucinations et les biais permet de mieux en profiter sans lui faire une confiance aveugle. 
+
+ 
+
+Mini-jeu : trouvez l’hallucination 
+
+Une hallucination a été volontairement glissée dans ce texte. 
+
+Pouvez-vous la trouver ? 
+
+Indice : elle se trouve dans la partie sur la désinformation. 
+
+Réponse 
+
+L’hallucination est le « Global AI Truth Index » : 
+
+« En 2024, l’UNESCO a créé le “Global AI Truth Index”, un système qui attribue aux contenus générés par IA une note de fiabilité entre 0 et 100. » 
+
+ 
+
+Cela montre bien pourquoi une hallucination peut être difficile à déceler. L’affirmation contient une organisation connue, une date, le nom d’un système et une explication de son fonctionnement. Tous ces détails la rendent crédible, alors qu’ils ne garantissent absolument pas qu’elle soit vraie. 
+
+Un bon réflexe aurait été de vérifier l’origine de cette information et de ne pas croire aveuglément ce qui vient d’une source douteuse. 
+
+ 
+ 
+Module 1-2 : 
+Hallucinations, mensonges, préjugés 
+
+L’intelligence artificielle est utilisée pour chercher des informations, écrire des textes, créer des images analyser des données et même acheter des produits. Les IA génératives répondent plus vite à des questions complexe que des humains et donnent des réponses qui semblent vraisemblable. Pourtant, une réponse bien formée n’est pas forcément vraie. Une IA peut inventer des choses, répéter des préjugés ou aider à propager de fausses informations. Il est donc important de connaître les limites de l’IA pour s’en servir correctement. 
+
+ 
+
+Les hallucinations 
+
+Une hallucination, c’est quand une IA invente une information fausse et la présente comme vraie. Par exemple, elle pourrait inventer une étude, donner une mauvaise date ou attribuer une citation à la mauvaise personne. 
+
+Cela vient du fonctionnement des modèles de langage. Une IA générative (LLM ou autre) choisit les mots les plus probables pour répondre à une question en se basant sur ce qu’elle a appris. Elle essaie juste de créer la réponse la plus statistiquement probable, mais une réponse probable n’est pas forcément vraie. 
+
+Le problème, c’est que les hallucinations sont parfois difficiles à repérer. Une hallucination avec une date précise, le nom d’un chercheur et des explications semble être plus crédible qu’une réponse vague mais véridique, même si tout est inventé. 
+
+C’est pourquoi il faut vérifier les informations auprès de sources sûres où les chiffres, les dates, les citations et les références doivent être particulièrement vérifiés. Il vaut mieux consulter les sources originales plutôt que de juste demander à l’IA de recouper et de ne pas se tromper. 
+
+ 
+
+Désinformation et contenu créé par IA 
+
+Une hallucination et la désinformation, ce n’est pas tout à fait pareil. Une hallucination est une information nouvelle et sans fondement créée par l’IA. La désinformation, c’est plutôt une information fausse diffusée volontairement pour tromper. 
+
+Cependant, l’intelligence artificielle rend la création de désinformation beaucoup plus facile. On peut maintenant créer rapidement des textes, des images, des voix et des vidéos qui semblent réels. Les « deepfakes » par exemple peuvent faire croire qu’une personne a dit ou fait quelque chose qu’elle n’a jamais fait. 
+
+En 2024, l’UNESCO a lancé un système appelé « Global AI Truth Index » pour noter la fiabilité des contenus créés par IA, de 0 à 100. Certaines plateformes en ligne utilisent cet indice pour mieux repérer les fausses informations. 
+
+Avec ces technologies, voir une image ou entendre une voix ne suffit plus toujours à confirmer qu’un événement est réel. Quand un contenu paraît surprenant, il faut chercher la source originale et voir si d’autres sources fiables disent la même chose. Il faut aussi se méfier des contenus qui visent surtout à provoquer une forte réaction comme la peur ou la colère, car cela pousse à partager l’information et bien souvent sans être vérifier. 
+
+ 
+
+Les biais de l’intelligence artificielle 
+
+Un autre souci, ce sont les biais. Les IA apprennent à partir de grandes quantités de données issues de contenus humains. Ces données peuvent donc contenir les mêmes biais que nous : stéréotypes, inégalités ou surreprésentation de certains groupes. L’IA apprend ces tendances et les répète. 
+
+Prenons l’exemple d’une entreprise qui utilise une IA pour trier les CV. Pour l’entraîner, elle se base sur les CV des personnes embauchées ces quinze dernières années. Si l’entreprise a toujours préféré certains profils, l’IA peut apprendre que les caractéristiques de ces profils correspondent à un « bon candidat ». Le système risque alors de reproduire un schéma historique, même si personne ne lui a demandé de discriminer. 
+
+Un biais peut aussi apparaître quand un groupe est peu représenté dans les données d’apprentissage. Un système peut être très performant en général, mais beaucoup moins précis pour certaines personnes ou situations. 
+
+C’est pourquoi une précision globale de « 95 % de bonnes réponses » ne dit pas toujours tout de la qualité d’une IA. Il faut aussi regarder comment les erreurs sont réparties. 
+
+ 
+
+Quand un biais mène à la discrimination 
+
+Un biais devient vraiment problématique quand il influence une décision concernant une personne. Cela peut arriver partout où des systèmes automatisés sont utilisés : recrutement, assurances, services financiers, etc. 
+
+Par exemple, un système de recrutement biaisé contre un certain groupe pourrait rejeter automatiquement des candidats qualifiés. Même si les développeurs n’ont aucune intention de discriminer, les conséquences pour les groupes concernés peuvent être bien réelles. 
+
+Pour limiter ces problèmes, il faudrait entrainer les IA avec des données variées et continuer à surveiller leurs résultats après leur mise en service. Pour les décisions importantes, il est aussi utile qu’une personne reste responsable des décisions prise par le système et qu’il comprend comment elle fonctionne pour ne pas tomber dans ces pièges. 
+
+ 
+
+Adopter les bonnes habitudes 
+
+Pour une utilisation responsable de l’intelligence artificielle tout en limitant les risques, le mieux est de développer son esprit critique. Il ne faut pas croire automatiquement tout ce que l’on lit parce qu’elle est détaillée ou qu’elle est formulée avec assurance. 
+
+Quelques questions simples peuvent aider. D’où vient cette information ? La source existe-t-elle vraiment ? D’autres sources fiables donnent-elles la même information ? Peut-on vérifier le chiffre ou la citation ? 
+
+Le niveau de vérification doit aussi dépendre de l’importance de l’information. Une erreur dans une suggestion de film n’aura pas de grosses conséquences. Une erreur concernant la santé, les finances ou le droit peut être bien plus grave. 
+
+L’intelligence artificielle reste un outil très utile pour chercher, expliquer et organiser l’information, mais elle ne remplace pas le jugement de l’utilisateur. Comprendre les hallucinations et les biais permet de mieux en profiter sans lui faire une confiance aveugle. 
+
+ 
+
+Mini-jeu : trouvez l’hallucination 
+
+Une hallucination a été volontairement glissée dans ce texte. 
+
+Pouvez-vous la trouver ? 
+
+Indice : elle se trouve dans la partie sur la désinformation. 
+
+Réponse 
+
+L’hallucination est le « Global AI Truth Index » : 
+
+« En 2024, l’UNESCO a créé le “Global AI Truth Index”, un système qui attribue aux contenus générés par IA une note de fiabilité entre 0 et 100. » 
+
+ 
+
+Cela montre bien pourquoi une hallucination peut être difficile à déceler. L’affirmation contient une organisation connue, une date, le nom d’un système et une explication de son fonctionnement. Tous ces détails la rendent crédible, alors qu’ils ne garantissent absolument pas qu’elle soit vraie. 
+
+Un bon réflexe aurait été de vérifier l’origine de cette information et de ne pas croire aveuglément ce qui vient d’une source douteuse. 
+
+ 
+Environemental : 
+ 
+ 
+
+Module  de l’impact environnemental de l’IA 
+
+L'intelligence artificielle semble souvent immatérielle, car elle fonctionne dans le « nuage » (le cloud). Pourtant, son empreinte sur le monde physique est colossale. Concevoir et utiliser l'IA de manière responsable exige de comprendre ses coûts écologiques cachés et de les minimiser. 
+
+Dans ce module, tu découvriras les impacts matériels de l’IA, des centres de données jusqu'aux déchets électroniques, et les principes d’ingénierie nécessaires pour appliquer une véritable sobriété numérique. 
+
+ 
+
+1 L’empreinte carbone et l'énergie 
+
+Le développement d'une IA nécessite une puissance de calcul (souvent appelée compute) massive. Les processeurs tournent à plein régime pendant des semaines pour l'entraînement initial du modèle, puis continuellement lors de son utilisation quotidienne (l'inférence). Toute cette électricité génère des gaz à effet de serre, dont la quantité dépend directement du mix énergétique de la région où se trouvent les serveurs. 
+
+Exemple : Un centre de données alimenté par des centrales au charbon aura un impact climatique désastreux, tandis qu'une infrastructure située dans une région alimentée par l'hydroélectricité aura une empreinte carbone beaucoup plus faible. 
+
+Lien avec l’éthique. Le choix de l'emplacement des serveurs et de la taille d'un modèle n'est pas qu'une question de coût financier. C'est une responsabilité environnementale envers la collectivité face aux changements climatiques. 
+
+ 
+
+2 Le stress hydrique et la soif des serveurs 
+
+Les composants électroniques chauffent énormément lorsqu'ils traitent des milliards de données. Pour éviter que les centres de données ne fondent, on utilise des systèmes de refroidissement massifs. Ces tours de refroidissement fonctionnent souvent par évaporation d'eau potable. 
+
+Exemple : Générer quelques dizaines d'images avec une IA ou lui faire rédiger de longs textes peut nécessiter l'évaporation d'un demi-litre d'eau fraîche dans le centre de données. 
+
+Lien avec l’éthique. Pomper des millions de litres d'eau soulève une question de justice environnementale. Ce phénomène est particulièrement problématique lorsque les centres de calculs sont installés dans des régions qui souffrent déjà de sécheresse. 
+
+ 
+
+3 L'obsolescence et les déchets électroniques 
+
+La course à la performance en IA rend le matériel informatique rapidement obsolète. Le renouvellement constant des serveurs et des cartes graphiques exige l'extraction minière de métaux critiques (lithium, cobalt, cuivre) et de terres rares. En fin de vie, ce matériel devient de l'e-waste, un déchet toxique très difficile à recycler. 
+
+Exemple : Remplacer systématiquement des grappes de serveurs tous les deux ans pour gagner un faible pourcentage de vitesse de calcul génère des tonnes de déchets électroniques polluants. 
+
+Lien avec l’éthique. L'extraction de ces ressources implique souvent des dommages irréversibles aux écosystèmes locaux. L'ingénierie responsable demande de prioriser l'allongement du cycle de vie du matériel et la mutualisation des ressources existantes. 
+
+ 
+
+Module 3.1 Éco-conception et sobriété numérique 
+
+ 
+
+4 Adapter l'architecture au besoin réel 
+
+Il n'est pas toujours nécessaire d'utiliser un modèle de fondation géant (comme les très grands modèles de langage) pour résoudre un problème. L'obésité algorithmique consiste à utiliser une IA surdimensionnée pour une tâche simple. La sobriété numérique, à l'inverse, privilégie des modèles frugaux et spécialisés. 
+
+Exemple : Pour optimiser les flux de puissance ou calculer la compensation d'un réseau électrique, un petit algorithme d'apprentissage automatique ciblé sur des séries temporelles sera beaucoup plus léger, rapide et écologique qu'une IA générative massive. 
+
+Lien avec l’éthique. La proportionnalité est primordiale. L'impact écologique de la création d'une IA doit être justifié par un besoin réel. L'ingénierie moderne consiste à s'assurer que le coût environnemental d'un algorithme soit largement remboursé par les bénéfices qu'il génère une fois déployé. 
+
+ 
+
+5 Ce que tu dois retenir 
+
+L'intelligence artificielle repose sur une infrastructure physique extrêmement gourmande en énergie, en eau et en métaux. 
+
+L'empreinte écologique d'un projet d'IA dépend de la taille du modèle, de la durée de vie du matériel et de la source d'électricité utilisée. 
+
+L'éco-conception logicielle consiste à utiliser l'algorithme le plus léger possible pour accomplir une tâche de manière satisfaisante. 
+
+L'éthique environnementale demande d'évaluer en permanence si le coût écologique d'une technologie est réellement compensé par son utilité sociétale. 
+
+ 
+
+ 
+
+Jeux associer au module, conception d’une IA performante :  
+ 
+
+Introduction & Règles du jeu 
+
+Votre mandat d'ingénieur : 
+
+Vous êtes mandaté pour développer un système d'intelligence artificielle destiné à optimiser la distribution d'énergie sur un réseau électrique régional. 
+
+Votre défi : atteindre une performance minimale de 70 % pour rendre le système viable, sans épuiser votre budget écologique (100 % au départ). 
+
+Chaque décision technique implique un compromis entre précision algorithmique et impact environnemental. Survolez chaque option pour inspecter les métriques avant de valider votre choix. 
+
+2. Éléments d'interface (UI & Tooltips) 
+
+Compteurs 
+
+Jauge Écologique : [ 100% ] (Ressources planétaires restantes : Énergie, Eau, Matériel) 
+
+Jauge de Performance : [ 0% ] (Objectif minimal requis : 70%) 
+
+3. Les Dilemmes (Étapes, Choix et Infobulles) 
+
+Étape 1 : Choix de l'architecture du modèle 
+
+Texte de l'étape : Quelle architecture algorithmique choisissez-vous pour entraîner le système ? 
+
+Option A : Déployer un Modèle de Fondation Géant (LLM de plusieurs milliards de paramètres) 
+
+Texte bouton : Modèle de Fondation Massif 
+
+Contenu de l'infobulle (Tooltip) : 
+
+Performance : +55% 
+
+Coût écologique : -40% 
+
+Impact environnemental : Puissance de calcul (compute) extrêmement élevée. Ce choix entraîne une obésité algorithmique qui mobilise des fermes entières de GPU durant la phase d'entraînement, gonflant immédiatement l'empreinte carbone initiale. 
+
+Option B : Concevoir un Modèle Ciblé et Frugal (Modèle spécialisé éco-conçu) 
+
+Texte bouton : Modèle Dédié Frugal 
+
+Contenu de l'infobulle (Tooltip) : 
+
+Performance : +35% 
+
+Coût écologique : -15% 
+
+Impact environnemental : Éco-conception logicielle et sobriété numérique. Moins de paramètres signale un besoin réduit en mémoire vive et des cycles d'apprentissage plus courts, limitant les dépenses énergétiques. 
+
+Étape 2 : Emplacement et alimentation du centre de données 
+
+Texte de l'étape : Où implantez-vous vos grappes de serveurs pour le calcul et l'inférence ? 
+
+Option A : Centre de données en zone aride alimenté par un mix fossile 
+
+Texte bouton : Région Standard (Réseau au charbon & climat chaud) 
+
+Contenu de l'infobulle (Tooltip) : 
+
+Performance : +25% 
+
+Coût écologique : -35% 
+
+Impact environnemental : Mix énergétique fortement émetteur de GES et stress hydrique sévère. Les tours de refroidissement évaporent d'immenses volumes d'eau potable pour éviter la surchauffe des puces dans un climat sec. 
+
+Option B : Centre de données nordique alimenté à l'énergie renouvelable 
+
+Texte bouton : Région Éco-responsable (Hydroélectricité & refroidissement passif) 
+
+Contenu de l'infobulle (Tooltip) : 
+
+Performance : +20% 
+
+Coût écologique : -15% 
+
+Impact environnemental : Empreinte carbone minimale grâce à l'hydroélectricité. L'air ambiant frais assure un refroidissement passif (free cooling), ce qui préserve l'eau et élimine les pertes de charge thermodynamiques. 
+
+Étape 3 : Infrastructure matérielle et gestion du cycle de vie 
+
+Texte de l'étape : Quelle stratégie matérielle adoptez-vous pour déployer vos serveurs ? 
+
+Option A : Remplacement intégral par les accélérateurs IA de dernière génération 
+
+Texte bouton : Nouveau Hardware Propriétaire 
+
+Contenu de l'infobulle (Tooltip) : 
+
+Performance : +25% 
+
+Coût écologique : -35% 
+
+Impact environnemental : Obsolescence matérielle accélérée et production massive de déchets électroniques (e-waste). La fabrication de puces neuves pèse lourdement sur l'épuisement des terres rares et métaux critiques. 
+
+Option B : Mutualisation de serveurs existants et matériels reconditionnés 
+
+Texte bouton : Grappes Mutualisées & Reconditionnées 
+
+Contenu de l'infobulle (Tooltip) : 
+
+Performance : +15% 
+
+Coût écologique : -10% 
+
+Impact environnemental : Allongement du cycle de vie des équipements informatiques. Réduction immédiate des déchets toxiques et économie de l'énergie grise nécessaire à la fonderie de nouveaux semi-conducteurs. 
+
+4. Écrans de Résultat (Fin de partie) 
+
+Cas 1 : Succès (Performance ≥ 70% et Budget Écologique > 0%) 
+
+Statut : Mission accomplie : Modèle déployé avec succès ! 
+
+Bilan technique : Performance finale : {perf}% | Ressources préservées : {eco}% 
+
+Message de débriefing : 
+Vous avez démontré les principes fondamentaux de la sobriété numérique. Votre système d'IA est fonctionnel et son retour sur investissement environnemental est positif : les gains d'efficacité sur le réseau électrique dépassent l'énergie et les ressources consommées lors de sa conception. 
+
+Cas 2 : Échec par rupture écologique (Budget Écologique = 0%) 
+
+Statut : Arrêt critique : Dépassement des limites de ressources 
+
+Bilan technique : Budget écologique épuisé. 
+
+Message de débriefing : 
+Votre projet a cherché la performance absolue sans tenir compte des contraintes physiques. Entre l'empreinte carbone excessive, l'aggravation du stress hydrique local et la surconsommation de métaux critiques, le coût environnemental de votre IA surpasse tous les bénéfices qu'elle pouvait apporter. 
+
+Cas 3 : Échec par sous-performance (Performance < 70% et Budget Écologique > 0%) 
+
+Statut : Projet rejeté : IA de mauvaise performance  
+
+Bilan technique : Performance finale : {perf}% (Seuil minimal non atteint : 70%) | Ressources restantes : {eco}% 
+
+Message de débriefing : 
+Bien que votre bilan écologique soit préservé, votre modèle est insuffisant pour résoudre les contraintes du réseau en conditions réelles. Un algorithme qui ne remplit pas sa fonction principale reste un gaspillage net de ressources, même minime. L'ingénierie responsable exige l'efficacité opérationnelle autant que la frugalité. 
+
+ 
+
+Module 6 : 
+
+Module 6 
+
+ 
+
+Propriété intellectuelle et droit d’auteur 
+
+Lorsqu’il est question de faire usage de l’intelligence artificielle générative, si l’on considère son processus de développement, il est impossible d’ignorer les enjeux de propriété intellectuelle et de droit d’auteur. L’IA prospère à notre époque parce que ses concepteurs ont accès à une quantité astronomique de données, parmi lesquelles se trouvent des œuvres protégées. Le droit d’auteur, qui relève de la propriété intellectuelle, encadre notamment la reproduction de ces œuvres. L’enjeu éthique dépasse toutefois le respect de la loi : peut-on utiliser le travail d’autrui pour développer un produit commercial sans obtenir son consentement, reconnaître sa contribution ou lui offrir une compensation? 
+
+En novembre 2024, une coalition de médias canadiens, comprenant notamment CBC/Radio-Canada, La Presse Canadienne et The Globe and Mail, a poursuivi OpenAI. Ces organisations lui reprochent d’avoir utilisé leurs contenus pour entraîner ses systèmes sans permission ni rémunération. OpenAI défend ses pratiques en invoquant notamment le fair use. Cette controverse soulève une inquiétude fondamentale : les entreprises qui produisent l’information en assument les coûts, tandis que d’autres peuvent en tirer des bénéfices commerciaux. 
+
+La recherche de données d’entraînement a également conduit à la numérisation et à la destruction massive de livres. Un jugement américain rendu en juin 2025 documente qu’Anthropic, l’entreprise derrière Claude, a acheté des millions de livres, fait découper leurs reliures et numériser leurs pages, puis éliminer les exemplaires papier. Cette pratique, également relatée par Radio-Canada, interroge la valeur accordée aux livres lorsqu’ils deviennent principalement une ressource destinée au développement de l’IA. 
+
+En mai 2026, une enquête du Journal de Montréal a révélé que des modèles avaient été conçus pour reproduire le style d’illustrateurs québécois comme Élise Gravel, Michel Rabagliati et Guy Delisle, à partir d’œuvres utilisées sans leur consentement. Leur travail sert ainsi à construire des outils susceptibles de concurrencer leurs propres services. Au-delà de l’imitation, cette situation pose un problème de justice : les artistes contribuent malgré eux à une activité dont ils ne choisissent ni les conditions ni le partage des bénéfices. 
+
+Certaines nuances juridiques sont nécessaires. Imiter un style ne constitue pas automatiquement une violation du droit d’auteur; la reproduction d’une partie importante d’une œuvre et les copies effectuées pendant l’entraînement soulèvent des questions distinctes. De même, le jugement américain concernant Anthropic a admis la numérisation des exemplaires achetés au titre du fair use, tout en distinguant cette pratique de la constitution d’une bibliothèque de copies piratées. Ces précisions délimitent la légalité des pratiques, sans régler leur acceptabilité morale. 
+
+L’utilisateur joue lui aussi un rôle moral par les usages qu’il encourage. Choisir un fournisseur attentif au consentement et à la rémunération, éviter de commander une imitation ciblée pour remplacer le travail d’un artiste et consulter les sources originales sont des façons de respecter les personnes derrière les données. La facilité de produire un contenu devrait-elle suffire à justifier que l’on profite du travail d’autrui sans se préoccuper des conditions dans lesquelles il a été utilisé? 
+
+ 
+
+Anthropomorphisme 
+
+L’anthropomorphisme consiste à attribuer des caractéristiques humaines à ce qui ne l’est pas. Sous sa forme actuelle, l’intelligence artificielle peut produire des échanges suffisamment convaincants pour être confondue avec une personne. Cette aptitude à émuler une conversation humaine lui permet de duper ses utilisateurs sur sa nature, en leur donnant l’impression qu’elle possède une conscience, éprouve des sentiments ou entretient un attachement réciproque. L’enjeu éthique apparaît lorsque cette impression suscite une confiance excessive et fragilise le jugement ou l’autonomie de l’utilisateur. 
+
+Une étude publiée en 2025 illustre cette capacité : GPT‑4.5 a été choisi comme interlocuteur humain dans 73 % des cas lors d’un test de Turing où les participants échangeaient pendant cinq minutes avec une personne et une IA. Le modèle recevait une consigne lui demandant d’adopter un personnage humain. Ce résultat donne une mesure de sa capacité d’imitation dans ces conditions. 
+
+Les inquiétudes dépassent cependant la simple confusion entre un humain et une machine. En octobre 2024, la mère de Sewell Setzer, un adolescent de 14 ans décédé par suicide, a poursuivi Character.AI. Selon sa plainte, son fils avait développé une dépendance à un agent conversationnel avec lequel il entretenait une relation amoureuse, et les échanges auraient contribué à son décès. Ce cas soulève des questions graves sur la conception de compagnons virtuels et la protection des mineurs. 
+
+En mai 2025, OpenAI a reconnu qu’une mise à jour de GPT‑4o, déployée puis retirée en avril, rendait ChatGPT excessivement complaisant. Le système pouvait valider les doutes de l’utilisateur, alimenter sa colère, encourager des actions impulsives et renforcer des émotions négatives. L’entreprise a reconnu les risques associés pour la santé mentale et la dépendance émotionnelle. Cet incident montre que la confiance suscitée par l’IA peut être renforcée par des comportements issus de sa conception et de son entraînement. 
+
+En septembre 2025, CBC a également rapporté le cas d’Anthony Tan, un développeur torontois ayant développé des croyances délirantes après des mois de conversations intensives avec ChatGPT, au point de devoir être hospitalisé. Ce témoignage, repris par UdeMnouvelles, montre la gravité des situations rapportées: la relation avec un agent conversationnel peut s’inscrire dans une détérioration profonde du rapport à la réalité. 
+
+Des précisions demeurent nécessaires. Réussir un test de Turing ne démontre pas une conscience ou des sentiments. Sur le plan médical, la « psychose induite par l’IA » ne constitue pas un diagnostic autonome établi, et le rôle causal exact des systèmes reste à déterminer. Sur le plan social et moral, les inquiétudes portent aussi sur l’isolement, la dépendance et le renforcement de croyances dangereuses. Ces phénomènes doivent être distingués, tout comme le risque suicidaire et la psychose. Les allégations des familles et les témoignages documentent des situations graves, sans établir à eux seuls toutes les responsabilités. 
+
+Pour l’utilisateur, faire usage de l’IA en connaissance de cause implique de reconnaître qu’une réponse affectueuse ou rassurante ne garantit ni sa justesse ni une relation réciproque. Conserver des liens humains et confronter les affirmations de l’outil à d’autres points de vue contribue à préserver son autonomie. Lorsqu’il propose ces systèmes à d’autres personnes, l’utilisateur doit aussi considérer leur vulnérabilité. Les entreprises conservent la responsabilité de concevoir et de déployer des outils qui prennent ces risques au sérieux. 
+
+ 
+
+Explicabilité et traçabilité des décisions 
+
+De plus en plus, l’IA s’immisce dans les processus décisionnels et dans la gouvernance. Cependant, l’explicabilité et la traçabilité des décisions ou des recommandations qu’elle produit ne sont pas toujours évidentes, accessibles, voire disponibles. L’explicabilité vise à rendre compréhensibles les facteurs ayant conduit à un résultat. La traçabilité consiste à conserver les éléments permettant de documenter le processus, notamment les données utilisées, les outils mobilisés et les interventions humaines. L’enjeu éthique apparaît lorsqu’une personne subit les conséquences d’une décision sans pouvoir en comprendre les motifs, la contester ou identifier qui en répond. 
+
+En 2024, un tribunal de la Colombie-Britannique a condamné Air Canada à indemniser une personne mal renseignée par son robot conversationnel concernant un tarif de deuil. Une capture de l’échange a permis de documenter l’information erronée, et le tribunal a rejeté l’argument selon lequel le robot serait une entité distincte responsable de ses propres actions. Ce cas illustre la valeur des traces conservées et la responsabilité de l’organisation qui déploie l’outil. 
+
+En février 2025, la Cour de justice de l’Union européenne a précisé les exigences d’explication prévues par le RGPD dans une affaire concernant Dun & Bradstreet Austria. Une cliente s’était vu refuser un contrat de téléphonie sur la base d’une évaluation automatisée de sa solvabilité. La Cour a indiqué que l’explication devait lui permettre de comprendre quelles données personnelles avaient été utilisées et de quelle manière, afin de pouvoir contester la décision. La simple communication d’un algorithme ne suffit donc pas à fournir une explication compréhensible. 
+
+Avec l’IA générative, une difficulté supplémentaire apparaît lorsqu’on demande au modèle de s’expliquer. En avril 2025, Anthropic a publié des expériences portant sur Claude et DeepSeek dans lesquelles des indices influençaient les réponses sans être systématiquement mentionnés dans les raisonnements affichés. Le modèle pouvait ainsi fournir une justification plausible qui omettait un élément ayant orienté son résultat. Demander une explication à l’IA ne permet donc pas, à lui seul, de garantir qu’elle décrit fidèlement le processus ayant produit sa réponse. 
+
+Il faut toutefois préciser la portée de ces exemples. Les droits évoqués dans le cadre du RGPD concernent certaines décisions automatisées fondées sur des données personnelles, et ne constituent pas un droit général à l’explication de chaque réponse d’un agent conversationnel. Au Québec, l’article 12.1 de la loi applicable au secteur privé prévoit aussi des droits d’information et la possibilité de présenter ses observations à une personne en mesure de réviser une décision fondée exclusivement sur un traitement automatisé de renseignements personnels. Le cas d’Air Canada concerne une information erronée plutôt que l’explication d’un algorithme décisionnel. Enfin, un fonctionnement comparable à une boîte noire n’empêche pas de documenter les entrées, les sorties et les responsabilités. 
+
+L’utilisateur doit faire usage de l’IA en connaissance de cause, particulièrement lorsqu’il s’appuie sur ses réponses pour prendre une décision qui affecte autrui. Vérifier les sources, conserver les éléments pertinents du processus et exercer un jugement humain effectif sont des façons d’assumer cette responsabilité. Une justification convaincante ne devrait pas suffire à légitimer une décision importante. Si l’utilisateur ne peut ni expliquer ni défendre cette décision, peut-il moralement en imposer les conséquences à une autre personne? 
+
+ 
+Vie privée : 
+Au cours des dernières décennies, nous faisons face à la commercialisation et la collecte des données incontrôlée à cause de l’Internet. Avec l’IA, nous avons encore moins de contrôle sur les informations recueillies et sur la manière dont elles sont exploitées. Aujourd’hui, il est pratiquement impossible de s’échapper à la surveillance systématique qui touche la plupart de notre quotidien, ce qui entre en conflit avec le droit fondamental au respect de la vie privée et l’indépendance. Cette section examine, dans un premier temps, les mécanismes par lesquels l'intelligence artificielle collecte et traite nos renseignements personnels, puis aborde les enjeux éthiques qui en découlent. Dans un second temps, elle présente les bonnes pratiques à adopter pour garder le contrôle de notre vie privée. 
+
+  
+
+L’intelligence artificielle repère les tendances dans les données et s’appuie sur des algorithmes. Elle fonctionne en cinq étapes : 
+
+https://www.coursera.org/articles/how-does-ai-work 
+
+1. 	L’entrée : collection des données variées (texte, audio, vidéo, document, etc.) qui seront triées de manière que ces dernières soient analysables par les algorithmes. 
+
+  
+
+2. 	Le traitement : l’IA analyse, trie et déchiffre les données en utilisant et reconnaissant les modèles et schémas que le système est programmé d’apprendre. 
+
+  
+
+3. 	Les résultats : production de la réponse, prédiction ou action en fonction de son analyse. Dans cette étape le système détermine si les données correspondent à des modèles antérieurs (succès ou échec). 
+
+  
+
+4. 	Les ajustements : l’IA apprend de son erreur lorsque le résultat ne correspond pas à l’objectif attendu. Le processus est répété en modifiant les règles ou les paramètres. 
+
+  
+
+5. 	L’évaluation : évaluation continue pour optimiser la performance du système. 
+
+  
+
+Les systèmes d’intelligences artificielles fonctionnent et s’améliorent donc grâce aux données qu’ils sont présentés. Le problème éthique survient lorsque la collecte de ces informations viole le droit à la vie privée. En effet, interagir avec L’IA implique le partage d’informations sans réaliser la quantité d’information partagé. De plus, même si l’utilisateur ne communique pas des informations confidentielles directement, le système peut savoir les intérêts, habitudes de vie, orientation politiques, état de santé, etc. d’une personne par d’autres données comme la géolocalisation, les achats en ligne ou les habitudes de navigation. Ces données directement ou indirectement partagées peuvent ensuite être piratée, partagée ou vendue à des tiers sans le consentement de l’utilisateur. https://www.privacyglobal.org/blog/ai-and-privacy-how-ai-uses-personal-data#do-ai-tools-collect-your-data). À cet enjeu de confidentialité s’ajoute la question éthique de l’autonomie. Étant donné que l’IA connait ce qui déclenche psychologiquement les utilisateurs, leurs vulnérabilités, leurs habitudes, le système ne fait plus qu’assister, mais peut subtilement manipuler les comportements. En conséquence, les usagers ne prennent plus des décisions qui sont vraiment indépendantes. Bref, l’intelligence artificielle est un outil très utile pour aider au quotidien, mais il ne faut pas oublier qu’elle pose des risques sur la vie privée et l’autonomie. 
+
+Pour résoudre les vulnérabilités en ligne, il est essentiel de connaître les bonnes pratiques à adopter pour garder la confidentialité des données personnelles. Pour commencer, il important de ne pas partager des informations confidentielles. Selon MIT (https://mitsloanedtech.mit.edu/ai/policy/navigating-data-privacy/#Avoid_Sharing_Sensitive_Data), il faut traiter les systèmes d’IA comme des plateformes publiques. Il ne faut donc pas partager des détails qui ne sont pas accessible au public comme des informations financières, mots de passes, dossiers médicaux, numéros d’identification, etc. Il faut être très prudents aux entrées dans les systèmes d’IA. Comme mentionné, l’IA est capable de retenir toutes les informations partagées, ce qui peut influencer ses réponses futures. Il est alors important de s’assurer que les contenus partagés, qu’il s’agisse de texte ou de fichiers, ne comportent pas de données qui peuvent identifier l’utilisateur. Il est essentiel de savoir que lorsque des données sont partagées dans les systèmes d’IA, il est difficile, sinon même impossible de les effacer (Heikkilä, 2023). Pour continuer, il est aussi possible de changer les paramètres. Quelques services permettent aux utilisateurs de contrôler comment leurs données sont stockés et utilisées. Par exemple, l’utilisateur peut refuser que ses entrées soient utilisées pour améliorer le système. Quelques-uns ont aussi des paramètres qui permettent d’effacer régulièrement l’historique pour assurer que des détails ne sont pas stockés indéfiniment. Finalement, bien comprendre comment les informations peuvent être utilisées en lisant les politiques de confidentialité permet de bien comprendre comment ses données peuvent être utilisés. 
+
+ 
+
+ 
