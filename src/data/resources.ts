@@ -57,6 +57,12 @@ export const resources: Resource[] = [
     description: 'Un éclairage sur l’énergie, les infrastructures et l’analyse du cycle de vie, pour comprendre les impacts environnementaux de l’IA.',
     url: 'https://www.ademe.fr/presse/communique-national/ia-generative-comment-quantifier-les-impacts/',
   },
+  {
+    id: 'ets-ia', title: 'Espace IA : l’intelligence artificielle à l’ÉTS', publisher: 'École de technologie supérieure (ÉTS)',
+    format: 'Portail institutionnel', theme: 'Bonnes pratiques',
+    description: 'Les principes directeurs de l’ÉTS et des ressources pour utiliser l’IA de façon responsable dans les études, l’enseignement, la recherche et le travail.',
+    url: 'https://www.etsmtl.ca/a-propos/intelligence-artificielle',
+  },
 ];
 
 export interface EducationalReading {

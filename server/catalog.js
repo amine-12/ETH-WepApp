@@ -65,6 +65,7 @@ export const catalog = {
     "cnil-privacy": "https://www.cnil.fr/sites/default/files/2026-05/affiche_ia_generative_et_vie_privee_fr.pdf",
     "unesco": "https://www.unesco.org/fr/articles/recommandation-sur-lethique-de-lintelligence-artificielle",
     "montreal": "https://declarationmontreal-iaresponsable.com/la-declaration/",
-    "ademe": "https://www.ademe.fr/presse/communique-national/ia-generative-comment-quantifier-les-impacts/"
+    "ademe": "https://www.ademe.fr/presse/communique-national/ia-generative-comment-quantifier-les-impacts/",
+    "ets-ia": "https://www.etsmtl.ca/a-propos/intelligence-artificielle"
   }
 };
