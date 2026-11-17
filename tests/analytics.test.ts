@@ -97,3 +97,27 @@ test('rapports SQL : cohortes, premières réponses, dernières étapes et score
   assert.equal(data.quiz[0].average_score, 80);
   sqlite.close();
 });
+
+
+test('un nouveau parcours conserve les résultats précédents et compte une nouvelle première réponse', async () => {
+  const { sqlite, binding } = database();
+  const env = { ANALYTICS_DB: binding, ANALYTICS_ADMIN_TOKEN: 'test-secret-long' };
+  for (const score of [8, 10]) {
+    const run = crypto.randomUUID();
+    const body = batch([
+      event('session_started'),
+      event('question_answered', { moduleId: 'comprendre-ia', entityId: 'comprendre-ia_q1', context: 'quiz', correct: score === 10 }),
+      event('quiz_started', { entityId: run }), event('quiz_completed', { entityId: run, value: score, total: 10 }),
+    ]);
+    assert.equal((await ingest({ request: post(body), env })).status, 200);
+    // Retrying an upload must not duplicate the quiz or answers.
+    await ingest({ request: post(body), env });
+  }
+  const response = await report({ request: new Request('https://example.com/api/statistics', { headers: { Authorization: 'Bearer test-secret-long' } }), env });
+  const data = await response.json();
+  assert.equal(data.overview[0].sessions, 2);
+  assert.deepEqual(data.questions[0], { entity_id: 'comprendre-ia_q1', context: 'quiz', attempts: 2, first_attempts: 2, first_correct: 1 });
+  assert.deepEqual(data.quiz[0], { started: 2, completed: 2, average_score: 90 });
+  assert.deepEqual(data.scores, [{ score: 8, runs: 1 }, { score: 10, runs: 1 }]);
+  sqlite.close();
+});

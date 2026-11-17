@@ -23,15 +23,34 @@ test('Cloudflare local : collecte réelle D1, quiz complet et tableau de bord pr
     return report.modules.find((m: any) => m.module_id === 'comprendre-ia')?.started ?? 0;
   }).toBe(initial + 1);
   await page.getByRole('navigation', { name: 'Navigation principale' }).getByRole('link', { name: 'Quiz', exact: true }).click();
-  await page.getByRole('button', { name: 'Commencer le quiz', exact: true }).click();
-  for (let i = 0; i < finalQuizIds.length; i++) {
-    const q = questions.find(q => q.id === finalQuizIds[i])!;
-    await page.getByRole('radio').nth(q.options.findIndex(o => o.id === q.correctAnswer)).check();
-    await page.getByRole('button', { name: 'Valider ma réponse' }).click();
-    await page.getByRole('button', { name: i === 9 ? 'Voir mon résultat' : 'Question suivante' }).click();
+  const oldSession = await page.evaluate(() => JSON.parse(sessionStorage.getItem('ia-ethique.analytics.session')!).id);
+  const initialQuestions = new Map(before.questions.filter((q: any) => q.context === 'quiz').map((q: any) => [q.entity_id, q.first_attempts]));
+  for (let run = 0; run < 2; run++) {
+    await page.getByRole('button', { name: 'Commencer le quiz', exact: true }).click();
+    for (let i = 0; i < finalQuizIds.length; i++) {
+      const q = questions.find(q => q.id === finalQuizIds[i])!;
+      const option = run === 0 && i === 0 ? q.options.findIndex(o => o.id !== q.correctAnswer) : q.options.findIndex(o => o.id === q.correctAnswer);
+      await page.getByRole('radio').nth(option).check();
+      await page.getByRole('button', { name: 'Valider ma réponse' }).click();
+      await page.getByRole('button', { name: i === 9 ? 'Voir mon résultat' : 'Question suivante' }).click();
+    }
+    await page.clock.runFor(16000);
+    await expect.poll(async () => (await (await request.get('/api/statistics?days=30', { headers })).json()).quiz[0].completed).toBe(initialQuizzes + run + 1);
+    if (!run) {
+      await page.getByRole('navigation', { name: 'Navigation principale' }).getByRole('link', { name: 'Ma progression' }).click();
+      await page.getByRole('button', { name: 'Réinitialiser ma progression', exact: true }).click();
+      await page.getByRole('dialog').getByRole('button', { name: 'Réinitialiser', exact: true }).click();
+      expect(await page.evaluate(() => JSON.parse(sessionStorage.getItem('ia-ethique.analytics.session')!).id)).not.toBe(oldSession);
+      await page.getByRole('link', { name: 'Passer le quiz', exact: true }).click();
+    }
   }
-  await page.clock.runFor(16000);
-  await expect.poll(async () => (await (await request.get('/api/statistics?days=30', { headers })).json()).quiz[0].completed).toBe(initialQuizzes + 1);
+  const after = await (await request.get('/api/statistics?days=30', { headers })).json();
+  for (const id of finalQuizIds) {
+    expect(after.questions.find((q: any) => q.entity_id === id && q.context === 'quiz').first_attempts).toBe(Number(initialQuestions.get(id) ?? 0) + 2);
+  }
+  for (const score of [9, 10]) {
+    expect(after.scores.find((r: any) => r.score === score).runs).toBe((before.scores.find((r: any) => r.score === score)?.runs ?? 0) + 1);
+  }
   await page.goto('/statistiques');
   await page.getByLabel('Mot de passe administrateur').fill(secret!);
   await page.getByRole('button', { name: 'Consulter les statistiques' }).click();

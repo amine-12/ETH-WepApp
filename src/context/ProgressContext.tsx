@@ -1,11 +1,12 @@
-import { finishActivity, track } from '../services/analyticsService';
+import { analyticsService, finishActivity, track } from '../services/analyticsService';
 import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from 'react';
-import { progressService } from '../services/progressService';
+import { emptyProgress, progressService } from '../services/progressService';
 import type { GameResult, Progress, Question } from '../types/course';
 
 interface ProgressValue {
   progress: Progress;
   storageAvailable: boolean;
+  resetProgress: () => void;
   saveAnswer: (question: Question, answer: string) => void;
   openModule: (id: string) => void;
   setSection: (id: string, index: number) => void;
@@ -26,7 +27,11 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     setProgress(transform);
   }, []);
   const openModule = useCallback((id: string) => update(p => progressService.trackModuleOpen(p, id)), [update]);
-  return <Context.Provider value={{ progress, storageAvailable, openModule,
+  const resetProgress = useCallback(() => {
+    setProgress(emptyProgress());
+    analyticsService.restartSession();
+  }, []);
+  return <Context.Provider value={{ progress, storageAvailable, openModule, resetProgress,
     saveAnswer: (q, a) => update(p => progressService.saveAnswer(p, q, a)),
     setSection: (id, index) => update(p => ({ ...p, moduleProgress: { ...p.moduleProgress, [id]: index } })),
     completeModule: id => { track('module_completed', { moduleId: id }, true); update(p => progressService.completeModule(p, id)); },
