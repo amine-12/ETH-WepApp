@@ -73,3 +73,9 @@ La progression et les réponses sélectionnées restent dans le navigateur. Les 
 - [Développement local](docs/guide-developpement.md)
 - [Déploiement Cloudflare](docs/guide-deploiement.md)
 - [Configuration GitHub Actions](docs/guide-github-actions.md)
+
+### Réinitialiser un parcours
+
+Dans **Ma progression**, le bouton **Réinitialiser ma progression** permet de repartir de zéro après confirmation. Il efface les modules terminés, positions de lecture, réponses, activités et dernier résultat du quiz sur ce navigateur. Le choix de consentement aux statistiques est conservé.
+
+Les statistiques déjà envoyées restent conservées selon la durée de rétention habituelle. Si la collecte est active, la réinitialisation démarre une nouvelle session anonyme : les réponses suivantes constituent de nouvelles premières tentatives et chaque quiz terminé ajoute un résultat. Les sessions comptées ne représentent donc pas nécessairement des personnes distinctes. Sans consentement ou lorsque la collecte est indisponible, la réinitialisation locale reste utilisable sans envoi ; la prochaine collecte autorisée utilisera une nouvelle session.

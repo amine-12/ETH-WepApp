@@ -17,6 +17,7 @@ let ready = false;
 let status: 'inactive' | 'checking' | 'active' | 'unavailable' | 'error' = 'inactive';
 let generation = 0;
 let session: { id: string; last: number; seen: string[]; device: string } | null = null;
+let restoreSession = true;
 let queue: QueuedEvent[] = [];
 let sending = false;
 let failures = 0;
@@ -31,7 +32,8 @@ function persistSession() {
   try { sessionStorage.setItem(SESSION_KEY, JSON.stringify(session)); } catch { /* Mémoire seulement. */ }
 }
 function ensureSession() {
-  if (!session) {
+  if (!session && restoreSession) {
+    restoreSession = false;
     try {
       const saved = JSON.parse(sessionStorage.getItem(SESSION_KEY) ?? 'null');
       if (saved && /^[0-9a-f-]{36}$/i.test(saved.id) && typeof saved.last === 'number' && Array.isArray(saved.seen) && ['mobile', 'tablet', 'desktop'].includes(saved.device)) session = saved;
@@ -85,7 +87,7 @@ export async function flush(keepalive = false) {
     await pendingRequest?.catch(() => undefined);
     return flush(keepalive);
   }
-  if (!queue.length || !session) return;
+  if (!queue.length) return;
   const { sessionId, device: sessionDevice } = queue[0];
   const count = queue.findIndex((item, i) => i >= 20 || item.sessionId !== sessionId);
   const batch = queue.splice(0, count === -1 ? Math.min(20, queue.length) : count);
@@ -119,6 +121,16 @@ export const analyticsService = {
   isReady: () => ready,
   getStatus: () => status,
   subscribe(listener: () => void) { listeners.add(listener); return () => { listeners.delete(listener); }; },
+  restartSession() {
+    session = null;
+    restoreSession = false;
+    chapter = null;
+    try { sessionStorage.removeItem(SESSION_KEY); } catch { /* Mémoire seulement. */ }
+    // Les événements déjà en attente gardent leur session, même pendant un envoi.
+    // track respecte le consentement et la disponibilité de la collecte.
+    track('page_view', { path: window.location.pathname });
+    void flush();
+  },
   choose(value: Exclude<AnalyticsChoice, null>) {
     choice = value;
     ready = false;
@@ -127,6 +139,7 @@ export const analyticsService = {
     controller?.abort();
     queue = [];
     session = null;
+    restoreSession = false;
     failures = 0;
     try { localStorage.setItem(CHOICE_KEY, value); sessionStorage.removeItem(SESSION_KEY); } catch { /* Mémoire seulement. */ }
     emit();
