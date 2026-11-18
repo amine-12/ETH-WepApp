@@ -4,6 +4,7 @@ import { StatisticsPage } from './pages/StatisticsPage';
 import { AnalyticsPreference, AnalyticsTracker, useChapterAnalytics } from './components/Analytics';
 import { track } from './services/analyticsService';
 import { ResourcesPage } from './pages/ResourcesPage';
+import { AboutPage } from './pages/AboutPage';
 import { ModuleReading } from './components/ModuleReading';
 import { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, Route, Routes, useLocation, useParams } from 'react-router-dom';
@@ -23,20 +24,35 @@ function Header() {
   const completed = modules.filter(m => progress.completedModules.includes(m.id)).length;
   const resume = modules.find(m => m.id === progress.lastModule) ?? modules[0];
   useEffect(() => setMenuOpen(false), [location.pathname]);
-  return <header className="site-header"><div className="header-inner"><Link to="/" className="brand" aria-label="IA et Éthique, accueil"><span className="brand-mark"><BrandLogo /></span><span>IA & Éthique<small>EXPLORER, COMPRENDRE, AGIR</small></span></Link><button className="menu-toggle" aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'} aria-expanded={menuOpen} aria-controls="main-nav" onClick={() => setMenuOpen(v => !v)}>{menuOpen ? <X /> : <Menu />}</button><nav id="main-nav" className={menuOpen ? 'open' : ''} aria-label="Navigation principale" onClick={() => setMenuOpen(false)}><NavLink to="/" end>Accueil</NavLink><NavLink to="/modules">Modules</NavLink><NavLink to="/quiz">Quiz</NavLink><NavLink to="/ressources">Ressources</NavLink><NavLink to="/progression">Ma progression</NavLink></nav><div className="header-actions"><span className="header-progress">{completed} / 6<ProgressBar value={completed / 6 * 100} label="Modules terminés" /></span><Link className="button small primary" to={`/modules/${resume.id}`}>Reprendre</Link></div></div></header>;
+  return <header className="site-header"><div className="header-inner"><Link to="/" className="brand" aria-label="IA et Éthique, accueil"><span className="brand-mark"><BrandLogo /></span><span>IA & Éthique<small>EXPLORER, COMPRENDRE, AGIR</small></span></Link><button className="menu-toggle" aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'} aria-expanded={menuOpen} aria-controls="main-nav" onClick={() => setMenuOpen(v => !v)}>{menuOpen ? <X /> : <Menu />}</button><nav id="main-nav" className={menuOpen ? 'open' : ''} aria-label="Navigation principale" onClick={() => setMenuOpen(false)}><NavLink to="/" end>Accueil</NavLink><NavLink to="/modules">Modules</NavLink><NavLink to="/quiz">Quiz</NavLink><NavLink to="/ressources">Ressources</NavLink><NavLink to="/progression">Ma progression</NavLink><NavLink to="/a-propos">À propos</NavLink></nav><div className="header-actions"><span className="header-progress">{completed} / 6<ProgressBar value={completed / 6 * 100} label="Modules terminés" /></span><Link className="button small primary" to={`/modules/${resume.id}`}>Reprendre</Link></div></div></header>;
 }
 
 function RouteEffects() {
-  const { pathname } = useLocation();
+  const { pathname, hash, key } = useLocation();
   const firstRender = useRef(true);
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' });
     const current = modules.find(m => pathname === `/modules/${m.id}`);
-    const label = current?.title ?? ({ '/': 'Accueil', '/modules': 'Les modules', '/quiz': 'Quiz final', '/ressources': 'Ressources', '/progression': 'Ma progression', '/statistiques': 'Statistiques' }[pathname] ?? 'Page introuvable');
+    const label = current?.title ?? ({ '/': 'Accueil', '/modules': 'Les modules', '/quiz': 'Quiz final', '/ressources': 'Ressources', '/progression': 'Ma progression', '/a-propos': 'À propos', '/statistiques': 'Statistiques' }[pathname] ?? 'Page introuvable');
     document.title = `${label} · IA & Éthique`;
-    if (!firstRender.current) document.getElementById('main-content')?.focus({ preventScroll: true });
+    const initial = firstRender.current;
     firstRender.current = false;
-  }, [pathname]);
+    // Attendre le rendu de la page et la fermeture éventuelle du menu mobile.
+    const frame = requestAnimationFrame(() => {
+      let target: HTMLElement | null = null;
+      try { target = hash ? document.getElementById(decodeURIComponent(hash.slice(1))) : null; }
+      catch { /* Un fragment mal encodé ne doit pas interrompre la navigation. */ }
+      if (target) {
+        if (target.tabIndex < 0) target.tabIndex = -1;
+        target.focus({ preventScroll: true });
+        const headerHeight = document.querySelector('.site-header')?.getBoundingClientRect().height ?? 0;
+        window.scrollTo({ top: window.scrollY + target.getBoundingClientRect().top - headerHeight - 16, behavior: 'instant' });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'instant' });
+        if (!initial) document.getElementById('main-content')?.focus({ preventScroll: true });
+      }
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [pathname, hash, key]);
   return null;
 }
 
@@ -111,5 +127,5 @@ function NotFound() { return <div className="page-width section-space page-headi
 
 export default function App() {
   const { storageAvailable } = useProgress();
-  return <><a className="skip-link" href="#main-content">Aller au contenu</a><Header /><RouteEffects /><AnalyticsTracker /><AnalyticsPreference initial /><main id="main-content" tabIndex={-1}>{!storageAvailable && <div className="storage-warning" role="status">Le stockage est indisponible. Vous pouvez poursuivre, mais votre progression ne sera pas conservée après fermeture.</div>}<Routes><Route path="/" element={<HomePage />} /><Route path="/modules" element={<ModulesPage />} /><Route path="/modules/:moduleId" element={<ModulePage />} /><Route path="/quiz" element={<QuizPage />} /><Route path="/ressources" element={<ResourcesPage />} /><Route path="/progression" element={<ProgressPage />} /><Route path="/statistiques" element={<StatisticsPage />} /><Route path="*" element={<NotFound />} /></Routes></main><AnalyticsPreference /><footer className="site-footer"><div className="page-width"><div><strong>IA & Éthique</strong><span>Un parcours pédagogique</span></div><p>L'interface graphique du site internet a été conçue partiellement par Claude Code et des sections du contenu ont été reformulées. Le contenu pédagogique est authentique.</p><Link to="/statistiques">Administration</Link></div></footer></>;
+  return <><a className="skip-link" href="#main-content">Aller au contenu</a><Header /><RouteEffects /><AnalyticsTracker /><AnalyticsPreference initial /><main id="main-content" tabIndex={-1}>{!storageAvailable && <div className="storage-warning" role="status">Le stockage est indisponible. Vous pouvez poursuivre, mais votre progression ne sera pas conservée après fermeture.</div>}<Routes><Route path="/" element={<HomePage />} /><Route path="/modules" element={<ModulesPage />} /><Route path="/modules/:moduleId" element={<ModulePage />} /><Route path="/quiz" element={<QuizPage />} /><Route path="/ressources" element={<ResourcesPage />} /><Route path="/progression" element={<ProgressPage />} /><Route path="/a-propos" element={<AboutPage />} /><Route path="/statistiques" element={<StatisticsPage />} /><Route path="*" element={<NotFound />} /></Routes></main><AnalyticsPreference /><footer className="site-footer"><div className="page-width"><div><strong>IA & Éthique</strong><span>Un parcours pédagogique</span></div><p><Link to="/a-propos#declaration-utilisation-ia">Déclaration de l’utilisation de l’IA</Link></p><Link to="/statistiques">Administration</Link></div></footer></>;
 }

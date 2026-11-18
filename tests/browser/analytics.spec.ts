@@ -1,5 +1,36 @@
 import { expect, test } from '@playwright/test';
 
+test('à propos : consentement respecté et fragments exclus des statistiques', async ({ page }) => {
+  const received: any[] = [];
+  let configRequests = 0;
+  await page.route('**/api/analytics', async route => {
+    if (route.request().method() === 'GET') { configRequests++; await route.fulfill({ json: { enabled: true } }); }
+    else { received.push(route.request().postDataJSON()); await route.fulfill({ json: { accepted: true } }); }
+  });
+  await page.clock.install();
+  await page.goto('/a-propos#declaration-utilisation-ia');
+  await page.clock.runFor(16000);
+  expect(configRequests).toBe(0);
+  expect(received).toHaveLength(0);
+  await page.getByRole('button', { name: 'Accepter les statistiques', exact: true }).click();
+  await expect.poll(() => configRequests).toBe(1);
+  await page.clock.runFor(16000);
+  const views = () => received.flatMap(batch => batch.events).filter(e => e.name === 'page_view');
+  await expect.poll(() => views().length).toBe(1);
+  expect(views()[0].path).toBe('/a-propos');
+  await page.getByRole('heading', { name: 'Le projet', exact: true }).getByRole('link').click();
+  await expect(page).toHaveURL('/a-propos#le-projet');
+  await page.clock.runFor(16000);
+  expect(views()).toHaveLength(1);
+  expect(JSON.stringify(received)).not.toContain('#');
+  await page.getByRole('button', { name: /Modifier mon choix/ }).click();
+  await page.getByRole('button', { name: 'Refuser', exact: true }).click();
+  const previous = received.length;
+  await page.getByRole('contentinfo').getByRole('link', { name: 'Déclaration de l’utilisation de l’IA' }).click();
+  await page.clock.runFor(32000);
+  expect(received).toHaveLength(previous);
+});
+
 test('statistiques facultatives : aucun envoi sans accord, puis événements et retrait du choix', async ({ page }) => {
   const received: any[] = [];
   let configRequests = 0;

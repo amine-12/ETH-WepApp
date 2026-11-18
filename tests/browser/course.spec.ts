@@ -11,7 +11,7 @@ test('toutes les routes et les chapitres fonctionnent sans erreur console', asyn
   const errors: string[] = [];
   page.on('pageerror', e => errors.push(e.message));
   page.on('console', m => { if (m.type() === 'error') errors.push(m.text()); });
-  for (const route of ['/', '/modules', '/quiz', '/progression', '/ressources', ...modules.map(m => `/modules/${m.id}`)]) {
+  for (const route of ['/', '/modules', '/quiz', '/progression', '/ressources', '/a-propos', ...modules.map(m => `/modules/${m.id}`)]) {
     await page.goto(route);
     await expect(page.locator('h1')).toBeVisible();
     if (route.startsWith('/modules/')) {
@@ -138,7 +138,7 @@ test('clavier, texte agrandi et captures de contrôle', async ({ page }) => {
   await page.getByRole('button', { name: 'Concevez une IA performante et responsable' }).click();
   await page.screenshot({ path: 'test-results/module-mobile.png', fullPage: true, animations: 'disabled' });
   await page.setViewportSize({ width: 1440, height: 1000 });
-  for (const route of ['/', '/modules', '/progression', '/quiz', '/ressources', '/modules/environnement']) {
+  for (const route of ['/', '/modules', '/progression', '/quiz', '/ressources', '/a-propos', '/modules/environnement']) {
     await page.goto(route);
     await expect(page.locator('h1')).toBeVisible();
     // Linux utilise Arial en remplacement de Segoe UI : vérifier les deux rendus.
