@@ -41,6 +41,8 @@ test('la collecte rejette les valeurs invalides et élimine les données non aut
   assert.equal(result.events[0].correct, 1);
   assert.equal(JSON.stringify(result).includes('privé'), false);
   assert.equal(JSON.stringify(result).includes('selectedAnswer'), false);
+  assert.equal(validateBatch(batch([event('page_view', { path: '/a-propos' })]))?.events[0].path, '/a-propos');
+  for (const path of ['/a-propos#declaration-utilisation-ia', '/a-propos?email=private']) assert.equal(validateBatch(batch([event('page_view', { path })])), null);
   for (const invalid of [batch([event('unknown')]), batch([event('page_view', { path: '/?email=private' })]), batch([event('active_time', { moduleId: 'comprendre-ia', sectionId: 'intro', value: 61 })]), batch([event('question_answered', { moduleId: 'environnement', entityId: 'comprendre-ia_q1', context: 'course', correct: true })]), batch(Array.from({ length: 21 }, () => event('page_view')))]) assert.equal(validateBatch(invalid), null);
 });
 

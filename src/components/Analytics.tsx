@@ -11,7 +11,7 @@ export function AnalyticsTracker() {
   useEffect(() => analyticsService.start(), []);
   useEffect(() => {
     if (pathname === '/statistiques') void flush();
-    if (ready && ['/', '/modules', '/quiz', '/ressources', '/progression', ...modules.map(m => `/modules/${m.id}`)].includes(pathname)) track('page_view', { path: pathname });
+    if (ready && ['/', '/modules', '/quiz', '/ressources', '/progression', '/a-propos', ...modules.map(m => `/modules/${m.id}`)].includes(pathname)) track('page_view', { path: pathname });
   }, [pathname, ready]);
   useEffect(() => {
     const click = (event: MouseEvent) => {

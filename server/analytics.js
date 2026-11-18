@@ -3,7 +3,7 @@ import { catalog } from './catalog.js';
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const names = new Set(['session_started', 'page_view', 'module_started', 'module_completed', 'chapter_view', 'active_time', 'question_answered', 'activity_started', 'activity_completed', 'quiz_started', 'quiz_completed', 'resource_clicked', 'technical_error']);
 const activities = { prompt: 'bien-utiliser-ia', hallucination: 'hallucinations', eco: 'environnement', privacy: 'vie-privee' };
-const paths = new Set(['/', '/modules', '/quiz', '/progression', '/ressources', ...Object.keys(catalog.modules).map(id => `/modules/${id}`)]);
+const paths = new Set(['/', '/modules', '/quiz', '/progression', '/ressources', '/a-propos', ...Object.keys(catalog.modules).map(id => `/modules/${id}`)]);
 
 // Reconstituer chaque ligne depuis une liste fermée : pas de texte libre, URL,
 // adresse IP, user-agent, réponse sélectionnée ou paramètres de navigation.

@@ -7,7 +7,7 @@ type QueuedEvent = { sessionId: string; device: string; event: Event };
 const CHOICE_KEY = 'ia-ethique.analytics.choice';
 const SESSION_KEY = 'ia-ethique.analytics.session';
 const TIMEOUT = 30 * 60 * 1000;
-const paths = new Set(['/', '/modules', '/quiz', '/progression', '/ressources', ...modules.map(m => `/modules/${m.id}`)]);
+const paths = new Set(['/', '/modules', '/quiz', '/progression', '/ressources', '/a-propos', ...modules.map(m => `/modules/${m.id}`)]);
 let choice: AnalyticsChoice = null;
 try {
   const saved = localStorage.getItem(CHOICE_KEY);
